@@ -1,10 +1,29 @@
 let weatherData;
 let params;
+let lat;
+let long;
+
+async function getLocation(){//Get current location of user
+  return new Promise((resolve,reject)=>{
+    navigator.geolocation.getCurrentPosition(
+      (position) =>{
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        resolve(position);
+      },
+      (error) =>{
+        console.error("No location found",error);
+        reject(error);
+      }
+    ); 
+  });
+}
 
 async function requestWeather() {
+  await getLocation();//Using user's location, call upon the meteo API
   params = {
-    latitude: 52.52,
-    longitude: 13.41,
+    latitude: lat,
+    longitude: long,
     hourly: "temperature_2m",
     current: ["temperature_2m", "rain", "showers", "snowfall", "precipitation"],
   };
@@ -49,11 +68,15 @@ async function returnCurrentTemp(){
 async function returnCurrentConditions(){
   await requestWeather()
   let rain = "not"
+  let snow = "not"
   if(weatherData.current.rain == true){
     rain = ""
   }
+  if(weatherData.current.snow == true){
+    snow = ""
+  }
   document.getElementById("conditionsOutput").textContent =
-    "It is currently " + rain + " raining!";
+    "It is currently " + rain + " raining!\nAnd it is " + snow + " snowing!";
 }
 
 function returnCurrentLoc() {
