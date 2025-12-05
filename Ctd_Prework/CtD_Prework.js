@@ -40,7 +40,23 @@ async function requestWeather() {
   return weatherData;
 }
 
-function returnLat() {
-  document.getElementById("outputLat").textContent =
-    "Latitude: " + params.latitude;
+async function returnCurrentTemp(){
+  await requestWeather()
+  document.getElementById("tempOutput").textContent =
+    "The temparture is: " + weatherData.current.temperature_2m + "°C";
+}
+
+async function returnCurrentConditions(){
+  await requestWeather()
+  let rain = "not"
+  if(weatherData.current.rain == true){
+    rain = ""
+  }
+  document.getElementById("conditionsOutput").textContent =
+    "It is currently " + rain + " raining!";
+}
+
+function returnCurrentLoc() {
+  document.getElementById("outputLoc").textContent =
+    "The weather in your area of {Latitude: " + params.latitude+ " Longitude: " + params.longitude + "}";
 }
