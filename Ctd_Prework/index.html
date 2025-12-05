@@ -1,13 +1,22 @@
-<html>
+<html style="background-color: lightblue">
   <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weathering For You</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <center><h1>Weathering For You</h1>
-    <script src="CtD_Prework.js"></script>
-    <script>requestWeather();</script>
-  </center>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Weathering For You</title>
+      <link rel="stylesheet" href="./style.css" />
+    </head>
+    <center>
+      <h1>Weathering For You</h1>
+      <script src="CtD_Prework.js"></script>
+      <script>
+        weatherData = requestWeather();
+      </script>
+      <div id="outputLat">
+        <script>
+          returnLat();
+        </script>
+      </div>
+    </center>
+  </html>
 </html>

@@ -1,9 +1,9 @@
 /*************************************************
 **************************************************
 
-Website Name: 
+Website Name: Weathering For You
 Website URL: 
-Website Author: 
+Website Author: Jacky C.
 Author URL: 
 
 Color Guide
@@ -42,7 +42,7 @@ border: 1px solid #fff;
 ------------------------------------------------
 ----------------------------------------------*/
 * {
-  margin: 0;
+  margin: 20;
   padding: 0;
   box-sizing: border-box;
 }
