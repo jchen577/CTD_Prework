@@ -65,6 +65,10 @@ async function requestWeather() {
 async function returnCurrentTemp() {
   //Change the output of the temperature page
   await requestWeather();
+  setThermometerHeight(
+    (((weatherData.current.temperature_2m * 9) / 5 + 32).toFixed(2) / 100) *
+      190,
+  );
   if (setLoc) {
     document.getElementById("tempOutput").textContent =
       "The temperature near you is : " +
@@ -119,4 +123,9 @@ function returnCurrentLoc() {
     " Longitude: " +
     params.longitude +
     "}";
+}
+
+function setThermometerHeight(px) {
+  document.getElementById("thermometer").style.height =
+    String(Math.floor(px)) + "px";
 }

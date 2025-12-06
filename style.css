@@ -20,17 +20,16 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: radial-gradient(circle at 20% 20%, #ffffffaa, #87ceeb 60%),
-              radial-gradient(circle at 50% 30%, #ffffffaa, transparent 70%),
-              radial-gradient(circle at 50% 80%, #ffffffaa, transparent 70%),
-              #87ceeb;
-              background-size: cover;
+    radial-gradient(circle at 50% 30%, #ffffffaa, transparent 70%),
+    radial-gradient(circle at 50% 80%, #ffffffaa, transparent 70%), #87ceeb;
+  background-size: cover;
 }
 /*----------------------------------------------
   ------------------------------------------------
   2. Header & Nav Styles
   ------------------------------------------------
   ----------------------------------------------*/
-h1{
+h1 {
   font-size: 3.5em;
 }
 h3,
@@ -43,19 +42,24 @@ h2 {
   font-size: xx-large;
 }
 
-#conditionsOutput{
+#conditionsOutput {
   font-size: x-large;
 }
 
-#tempOutput{
+#tempOutput {
   font-size: x-large;
 }
 
-div{
+div {
   font-size: 1.5em;
 }
 
-.btn{
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.btn {
   display: inline-block;
   padding: 10px 18px;
   background-color: black;
@@ -66,6 +70,17 @@ div{
   font-weight: 500;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #2980b9;
+}
+
+#thermometer {
+  position: absolute;
+  left: 12.5px;
+  bottom: 20px;
+  width: 15px;
+  height: 200px;
+  background: red;
+  z-index: 5;
+  transform-origin: bottom;
 }
